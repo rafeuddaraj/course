@@ -7,8 +7,8 @@ export default function App() {
         const timer = setInterval(() => {
             setTime(new Date());
         }, 1000);
-        
-    },[]);
+        return () => clearInterval(timer);
+    }, []);
     return (
         <>
             <h1>The current time is:</h1>
